@@ -1,0 +1,117 @@
+textarea{
+    resize:none;
+}
+body{
+    background-color: cornflowerblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+#tex{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    margin: 4px 4px;
+     /* text-align: justify; */
+}
+/* #header{
+    width:40%;
+} */
+#left{
+    float:left;
+}
+#right{
+    float:right;
+}
+#texClose{
+    position: absolute;
+    margin: 0 0 0 35%;
+    cursor:pointer;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:1.25rem;
+    font-weight:bold;
+}
+#where{
+    border: 3px solid black;
+    height:20rem;
+    width:40%;
+    margin: 10rem 0 0 30%;
+    overflow:hidden;
+    overflow-y: scroll;
+}
+h1{
+    position: fixed;
+    top:0;
+    background-color: black;
+    color: white;
+    font-size: large;
+    text-align: center;
+    height:40px;
+    width:100%;
+}
+#side{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top:4rem;
+    background-color: rgba(151, 183, 211, 0.303); 
+    border: 3px black solid; 
+    width:100%;  
+} 
+.btn{
+    background-color: black;
+    color:cornflowerblue;
+    margin: 0 0 0.5rem 0;
+}
+#overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity:0;
+    background-color: rgba(41, 40, 35, 0.694);
+    pointer-events:none;
+}
+#modal{
+    padding:2rem 5rem;
+    height:20rem;
+    border:1px solid black;
+    display:none;
+    flex-direction: column;
+    align-items:center;
+    width: 10rem;
+    background-color: rgb(247, 244, 244);
+    position: fixed; 
+    top:15%;
+    left:40%; 
+    border-radius:10px;
+    transform:scale(1.3,1.4);
+}
+.text{
+    width:100%;
+    padding:0.5rem;
+    color:cornflowerblue;
+    background-color: black;
+    border-radius:10px;
+    box-shadow:2px 2px gray;
+    margin: 6px 0;
+}
+#field2{
+    padding:1rem;
+}
+#radios{
+    margin:4px 0;
+}
+#close{
+    position: absolute;
+    top:10px;
+    right:10px;
+    cursor:pointer;
+    border:none;
+    outline:none;
+    background:none;
+    font-size:1.25rem;
+    font-weight:bold;
+}
+
