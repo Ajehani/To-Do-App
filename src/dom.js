@@ -1,4 +1,7 @@
 import {todos} from './index.js'
+// console.log('wtf')
+// console.log("wtf" + todos())
+// let todo=todos();
 const dom=()=>{
     const overlay=document.createElement('div')
     overlay.id='overlay'
@@ -31,7 +34,6 @@ const dom=()=>{
         createTask.addEventListener('click',()=>{
             overlay.setAttribute("style","opacity:1;pointer-events:all;")
             modal.setAttribute("style","display:flex;")
-            // sub.classList.add("active")
             document.querySelector('#field1').value=""
             document.querySelector('#field2').value=""
             document.querySelector('#field3').value=""
@@ -104,6 +106,7 @@ const dom=()=>{
         sub.addEventListener('click',()=>{
                 modal.setAttribute("style","display:none;")
                 overlay.setAttribute("style","opacity:0;")
+                // console.log(todos())
                 todos(document.querySelector('#field1').value,document.querySelector('#field2').value,document.querySelector('#field3').value,document.querySelector('#radios').value).publish()
                 document.querySelector('#field1').value=""
                 document.querySelector('#field2').value=""
@@ -116,7 +119,8 @@ const dom=()=>{
         overlay.addEventListener('click',()=>{
             modal.setAttribute("style","display:none;")
             overlay.setAttribute("style","opacity:0;")
-    })
+            document.querySelector('.plsWork').setAttribute('style','display:none;')
+        })
     content.appendChild(where)
     content.appendChild(overlay)
     content.appendChild(modal)

@@ -2,6 +2,31 @@ import './style.css';
 import {dom} from './dom.js'
 let init=dom()
 const todos=(title,crip,date,rating)=>{
+    console.log('dont work pls')
+    let cloneModal=init.giveMeModal().cloneNode(true)
+    cloneModal.setAttribute('class',"plsWork")
+    cloneModal.lastChild.remove()
+    cloneModal.firstChild.addEventListener('click',()=>{
+        cloneModal.setAttribute("style","display:none;")
+        overlay.setAttribute("style","opacity:0;")
+    })
+    document.querySelector('#content').appendChild(cloneModal)
+    let sub=document.createElement('input')
+    sub.setAttribute('class','text')
+    sub.type="submit"
+    sub.value="Edit"
+    cloneModal.appendChild(sub)
+    // const giveClone=()=>cloneModal 
+    sub.addEventListener('click',()=>{
+        //I'm really lost on this one, basically i created a clone of the modal elemnet in order to redefine the submit button to an edit button. ATM 
+        console.log('hallejah')
+        cloneModal.setAttribute("style","display:none;")
+        overlay.setAttribute("style","opacity:0;")
+        // todos(document.querySelector('#field1').value,document.querySelector('#field2').value,document.querySelector('#field3').value,document.querySelector('#radios').value).publish()
+        // document.querySelector('#field1').value=
+        // document.querySelector('#field2').value=
+        // document.querySelector('#field3').value=
+    })
     const publish=()=>{
         const tex=document.createElement('li')
         tex.setAttribute('id',"tex")
@@ -30,29 +55,8 @@ const todos=(title,crip,date,rating)=>{
                 break
         }
         tex.addEventListener('click',()=>{
-            // let cloneModal=init.giveMeModal().cloneNode(true)
-            // console.log(cloneModal)
-            // document.querySelector('#content').appendChild(cloneModal)
-            // cloneModal.setAttribute("style","display:flex;") 
-            // cloneModal.querySelector('#field1').value=title
-            // cloneModal.querySelector('#field2').value=crip
-            // cloneModal.querySelector('#field3').value=date
-            // overlay.setAttribute("style","opacity:1;pointer-events:all;")
-            // cloneModal.firstChild.onclick=()=>{
-            //     cloneModal.style.display="none"
-            //     overlay.
-            // }
-            // cloneModal.lastChild.onclick=()=>{
-            //     left.textContent=`Title: ${cloneModal.querySelector('#field1').value=title}`
-            //     right.textContent=`Due Date: ${cloneModal.querySelector('#field3').value=date}`
-            // }
-            init.giveMeModal().lastChild.classList.add("tex")
-            init.giveMeModal().style.display="flex"
-            overlay.setAttribute("style","opacity:1;pointer-events:all;")
-            document.querySelector('#field1').value=title
-            document.querySelector('#field2').value=crip
-            document.querySelector('#field3').value=date          
-
+            cloneModal.style.display="flex"
+            overlay.setAttribute("style","opacity:1;pointer-events:all;")        
         })
         closeButton.addEventListener('click',()=>{
             tex.remove()
@@ -60,10 +64,10 @@ const todos=(title,crip,date,rating)=>{
         console.log(`Title: ${title} - Description: ${crip} - DueDate: ${date} - Rating: ${rating}`)
     }
     const persistence=()=>{}
-    return {publish}
+    return {publish,cloneModal}
 }
+export {todos}
 init.title()
 init.sidebar()
 init.createModal()
-export {todos}
 
